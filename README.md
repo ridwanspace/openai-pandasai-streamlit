@@ -23,6 +23,8 @@ While this project primarily focuses on data-driven insights using PandasAI and 
     * imputation
     * feature engineering.
 
+**`Screenshot 1:`** _Return top 5 cities in a table_
+
 ![Screenshot1](./assets/screenshot3.png)
 
 ### Installation
@@ -47,7 +49,7 @@ streamlit run app.py
 
 ### How to use
 1. Enter your Open AI API Key. Get [here](https://platform.openai.com/api-keys) if you do not have one
-2. Upload your csv
+2. Upload your csv (we use this [file](./example_dataset/List%20of%20Orders.csv) in the demo )
 3. Start asking your prompt
 
 Here suggested prompts. Modify for your own needs.
@@ -72,6 +74,8 @@ Here suggested prompts. Modify for your own needs.
 * Plot the histogram of .... showing for each the... using different colors for each bar"
 * Plot the ... against ...
 * Return .... with count of distinct ....
+
+**`Screenshot 2:`** _Return a pie chart_
 
 ![Screenshot 2](./assets/screenshot1.png)
 
