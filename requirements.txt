@@ -1,0 +1,5 @@
+pandasai
+pandas
+matplotlib
+openai
+pandasai

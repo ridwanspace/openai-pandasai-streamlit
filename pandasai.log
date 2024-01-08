@@ -1,0 +1,218 @@
+2024-01-08 23:13:46 [INFO] Question: the number orders made by Hazel
+2024-01-08 23:13:46 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:13:46 [INFO] Prompt ID: fa48e3d7-ea4e-4613-be58-fd9e28d7d86b
+2024-01-08 23:13:49 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['CustomerName'] == 'Hazel'].shape[0]
+                        ```
+                    
+2024-01-08 23:13:49 [INFO] 
+Code running:
+```
+df[df['CustomerName'] == 'Hazel'].shape[0]
+```
+2024-01-08 23:13:49 [INFO] Answer: 3
+2024-01-08 23:13:49 [INFO] Executed in: 3.3436214923858643s
+2024-01-08 23:14:28 [INFO] Question: daily line chart to show total orders per day
+2024-01-08 23:14:28 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:14:28 [INFO] Prompt ID: afd6e0df-9163-4746-a141-bd1eddf4a49c
+2024-01-08 23:14:36 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the dataframe from a csv file
+df = pd.read_csv('data.csv')
+
+# Convert the Order Date column to datetime format
+df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
+
+# Group the dataframe by Order Date and count the number of orders per day
+daily_orders = df.groupby('Order Date').size()
+
+# Plot the line chart
+plt.plot(daily_orders.index, daily_orders.values)
+plt.xlabel('Date')
+plt.ylabel('Total Orders')
+plt.title('Total Orders per Day')
+plt.show()
+                        ```
+                    
+2024-01-08 23:14:36 [INFO] 
+Code running:
+```
+df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
+daily_orders = df.groupby('Order Date').size()
+plt.plot(daily_orders.index, daily_orders.values)
+plt.xlabel('Date')
+plt.ylabel('Total Orders')
+plt.title('Total Orders per Day')
+plt.show()
+plt.close('all')
+```
+2024-01-08 23:14:36 [INFO] Answer: None
+2024-01-08 23:14:36 [INFO] Executed in: 8.410990238189697s
+2024-01-08 23:26:26 [INFO] Question: line chart for total orders
+2024-01-08 23:26:26 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:26:26 [INFO] Prompt ID: 19ee0243-65f1-43ec-8791-27a6284ab93c
+2024-01-08 23:26:33 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming the dataframe is already loaded and named df
+
+# Convert Order Date column to datetime
+df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
+
+# Group by Order Date and count the number of orders
+orders_by_date = df.groupby('Order Date').size()
+
+# Plot the line chart
+plt.plot(orders_by_date.index, orders_by_date.values)
+plt.xlabel('Order Date')
+plt.ylabel('Total Orders')
+plt.title('Total Orders Over Time')
+plt.show()
+                        ```
+                    
+2024-01-08 23:26:33 [INFO] 
+Code running:
+```
+df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
+orders_by_date = df.groupby('Order Date').size()
+plt.plot(orders_by_date.index, orders_by_date.values)
+plt.xlabel('Order Date')
+plt.ylabel('Total Orders')
+plt.title('Total Orders Over Time')
+st.pyplot(plt.gcf())
+plt.close('all')
+```
+2024-01-08 23:26:34 [INFO] Answer: None
+2024-01-08 23:26:34 [INFO] Executed in: 8.436254978179932s
+2024-01-08 23:27:08 [INFO] Question: pie chart for total orders per state
+2024-01-08 23:27:08 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:27:08 [INFO] Prompt ID: 06360b27-b8aa-40d9-bdf0-c3116d25244c
+2024-01-08 23:27:21 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating the dataframe
+data = {'Order ID': ['B-25604', 'B-25601', 'B-25602', 'B-25603', 'B-25605'],
+        'Order Date': ['2018-04-01', '2018-04-05', '2018-04-01', '2018-04-03', '2018-04-03'],
+        'CustomerName': ['Bharat', 'Pearl', 'Divsha', 'Jahan', 'Kasheen'],
+        'State': ['Rajasthan', 'Madhya Pradesh', 'Gujarat', 'Maharashtra', 'West Bengal'],
+        'City': ['Ahmedabad', 'Jaipur', 'Pune', 'Kolkata', 'Bhopal']}
+
+df = pd.DataFrame(data)
+
+# Counting the total orders per state
+orders_per_state = df['State'].value_counts()
+
+# Plotting the pie chart
+plt.figure(figsize=(10, 6))
+plt.pie(orders_per_state, labels=orders_per_state.index, autopct='%1.1f%%')
+plt.title('Total Orders per State')
+plt.show()
+                        ```
+                    
+2024-01-08 23:27:21 [INFO] 
+Code running:
+```
+orders_per_state = df['State'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.pie(orders_per_state, labels=orders_per_state.index, autopct='%1.1f%%')
+plt.title('Total Orders per State')
+st.pyplot(plt.gcf())
+plt.close('all')
+```
+2024-01-08 23:27:22 [INFO] Answer: None
+2024-01-08 23:27:22 [INFO] Executed in: 14.620560646057129s
+2024-01-08 23:27:51 [INFO] Question: pie chart for total orders per state. top 5
+2024-01-08 23:27:51 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:27:51 [INFO] Prompt ID: c65e7a48-8920-4cb1-b9c6-1146f4ab975f
+2024-01-08 23:28:05 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating the dataframe
+data = {'Order ID': ['B-25602', 'B-25601', 'B-25604', 'B-25605', 'B-25603'],
+        'Order Date': ['2018-04-01', '2018-04-03', '2018-04-05', '2018-04-03', '2018-04-01'],
+        'CustomerName': ['Bharat', 'Kasheen', 'Jahan', 'Divsha', 'Pearl'],
+        'State': ['Gujarat', 'Maharashtra', 'Madhya Pradesh', 'West Bengal', 'Rajasthan'],
+        'City': ['Kolkata', 'Ahmedabad', 'Jaipur', 'Bhopal', 'Pune']}
+
+df = pd.DataFrame(data)
+
+# Counting the total orders per state
+state_counts = df['State'].value_counts().head(5)
+
+# Plotting the pie chart
+plt.pie(state_counts, labels=state_counts.index, autopct='%1.1f%%')
+plt.title('Total Orders per State (Top 5)')
+plt.axis('equal')
+plt.show()
+                        ```
+                    
+2024-01-08 23:28:05 [INFO] 
+Code running:
+```
+state_counts = df['State'].value_counts().head(5)
+plt.pie(state_counts, labels=state_counts.index, autopct='%1.1f%%')
+plt.title('Total Orders per State (Top 5)')
+plt.axis('equal')
+st.pyplot(plt.gcf())
+plt.close('all')
+```
+2024-01-08 23:28:05 [INFO] Answer: None
+2024-01-08 23:28:05 [INFO] Executed in: 13.878279447555542s
+2024-01-08 23:44:29 [INFO] Question: who bought most order in west bengal?
+2024-01-08 23:44:29 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:44:29 [INFO] Prompt ID: 1519d254-0659-4d47-b9c2-f86804ff6bfc
+2024-01-08 23:44:33 [INFO] 
+                        Code generated:
+                        ```
+                        most_orders_wb = df[df['State'] == 'West Bengal']['CustomerName'].value_counts().idxmax()
+most_orders_wb
+                        ```
+                    
+2024-01-08 23:44:33 [INFO] 
+Code running:
+```
+most_orders_wb = df[df['State'] == 'West Bengal']['CustomerName'].value_counts().idxmax()
+most_orders_wb
+```
+2024-01-08 23:44:33 [INFO] Answer: Kasheen
+2024-01-08 23:44:33 [INFO] Executed in: 3.3114166259765625s
+2024-01-08 23:46:00 [INFO] Question: top 5 cities by orders in a table
+2024-01-08 23:46:00 [INFO] Running PandasAI with openai LLM...
+2024-01-08 23:46:00 [INFO] Prompt ID: 00723441-2c08-4a08-a43c-f04c3e306338
+2024-01-08 23:46:05 [INFO] 
+                        Code generated:
+                        ```
+                        top_5_cities = df['City'].value_counts().head(5)
+top_5_cities_table = pd.DataFrame({'City': top_5_cities.index, 'Orders': top_5_cities.values})
+top_5_cities_table
+                        ```
+                    
+2024-01-08 23:46:05 [INFO] 
+Code running:
+```
+top_5_cities = df['City'].value_counts().head(5)
+top_5_cities_table = pd.DataFrame({'City': top_5_cities.index, 'Orders': top_5_cities.values})
+top_5_cities_table
+```
+2024-01-08 23:46:05 [INFO] Answer:          City  Orders
+0      Indore      76
+1      Mumbai      68
+2  Chandigarh      30
+3       Delhi      25
+4      Bhopal      22
+2024-01-08 23:46:05 [INFO] Executed in: 4.577808380126953s
