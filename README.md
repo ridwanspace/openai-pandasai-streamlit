@@ -124,3 +124,16 @@ To learn how to use PandasAI in Notebook, please go to this [repo](https://githu
 
 ### Cost
 Check this [pricing](https://openai.com/pricing) in Open AI
+
+### What's Next
+You may modify this code to read other sources like:
+* Excel
+* MySql
+* MongoDB
+* BigQuery
+* Redshift
+* Snowflake
+* Parquet
+* Json
+* etc
+
