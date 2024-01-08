@@ -5,7 +5,7 @@
 ### Project Overview
 Empower yourself to delve into data, generate insights, and answer questions with ease through this self-service analytics application powered by PandasAI and OpenAI. This beginner-friendly guide equips you with the tools and knowledge to transform raw data into actionable intelligence.
 
-Given a knowledge base whose vectors are stored in a pinecone, the chatbot provides answers to the questions that are most relevant to the context (called as knowledge base == vector store).
+While this project primarily focuses on data-driven insights using PandasAI and OpenAI, it could be further enhanced with chatbot capabilities. This integration would enable users to ask questions in natural language and receive context-relevant responses in the world of pandas-like analysis.
 
 ### Tech Stack
 * [**Streamlit**](https://streamlit.io/): A web app framework for Python.
